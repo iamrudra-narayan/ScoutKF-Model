@@ -1,0 +1,245 @@
+<form
+  method="POST"
+  class="glass-morphism-container1"
+  name="player_form"
+  id="scout_form"
+  enctype="multipart/form-data"
+  style="width: 100%; margin: 0px !important"
+  action=""
+>
+  <h3>TALENT IDENTIFICATION LEVEL 1 REGISTRATION FORM</h3>
+  {% csrf_token %}
+  <div class="row">
+    <!-- email -->
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+        <label class="text-left">Email<span class="mandatory">*</span></label>
+        <input class="form-control" type="email" name="email" required="true" />
+      </div>
+    </div>
+    <!-- id -->
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+        <label class="text-left">ID<span class="mandatory">*</span></label>
+        <input class="form-control" type="text" name="id" required="true" />
+      </div>
+    </div>
+
+    <!-- age criteria -->
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+        <label class="text-left"
+          >Age Criteria<span class="mandatory">* </span></label
+        >
+        <div class="form-check">
+          <label class="form-check-label" for="yes"> Above 18 </label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="agecriteria"
+            value="1"
+          />
+        </div>
+        <div class="form-check">
+          <label class="form-check-label" for="no"> Below 18</label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="agecriteria"
+            value="0"
+            checked
+          />
+        </div>
+        <span id="message"></span>
+      </div>
+    </div>
+
+    <!-- dob -->
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group" id="dob_group">
+        <label class="text-left">
+          Date Of Birth<span class="mandatory">* </span></label
+        >
+        <input class="form-control" type="date" name="dob" required="true" />
+      </div>
+    </div>
+    <!-- contact -->
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+        <label class="text-left">Contact<span class="mandatory">*</span></label>
+        <input
+          class="form-control"
+          type="number"
+          name="contact"
+          required="true"
+        />
+      </div>
+    </div>
+
+    <!-- secondary contact -->
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+        <label class="text-left"
+          >Secondary Contact<span class="mandatory">*</span></label
+        >
+        <input
+          class="form-control"
+          type="number"
+          name="secondary_contact"
+          required="true"
+        />
+      </div>
+    </div>
+
+    <!-- country -->
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+        <label class="text-left">Country<span class="mandatory">*</span></label>
+        <input
+          class="form-control"
+          type="text"
+          name="country"
+          required="true"
+        />
+      </div>
+    </div>
+
+    <!-- city -->
+
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+        <label class="text-left">City<span class="mandatory">*</span></label>
+        <input class="form-control" type="text" name="city" required="true" />
+      </div>
+    </div>
+
+    <!-- referal code -->
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+        <label class="text-left">Referal Code</label>
+        <input class="form-control" type="text" name="referal" />
+      </div>
+    </div>
+
+    <!-- experience -->
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+        <label class="text-left"
+          >Do you have any experience of football as a player, coach or any
+          other role? *<span class="mandatory">* </span></label
+        >
+        <div class="form-check">
+          <label class="form-check-label" for="yes">Yes </label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="experience"
+            value="1"
+          />
+        </div>
+        <div class="form-check">
+          <label class="form-check-label" for="no">No</label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="experience"
+            value="0"
+            checked
+          />
+        </div>
+        <span id="message"></span>
+      </div>
+    </div>
+
+    <!-- worked before? -->
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+        <label class="text-left"
+          >Have you worked as scout before?
+          <span class="mandatory">* </span></label
+        >
+        <div class="form-check">
+          <label class="form-check-label" for="yes">Yes </label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="worked"
+            value="1"
+          />
+        </div>
+        <div class="form-check">
+          <label class="form-check-label" for="no">No</label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="worked"
+            value="0"
+            checked
+          />
+        </div>
+        <span id="message"></span>
+      </div>
+    </div>
+
+    <!-- Were you associated with football clubs as a player or coach in the past? If yes, what was the name of the club? -->
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+        <label class="text-left"
+          >Were you associated with football clubs as a player or coach in the
+          past? If yes, what was the name of the club?<span class="mandatory"
+            >*</span
+          ></label
+        >
+        <input
+          class="form-control"
+          type="text"
+          name="past_club"
+          required="true"
+        />
+      </div>
+    </div>
+
+    <!-- course selection -->
+    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+      <div class="form-group">
+        <label class="text-left"
+          >The course has two options. Please select the course that you are
+          interested in. <span class="mandatory">* </span></label
+        >
+        <div class="form-check">
+          <label class="form-check-label" for="yes">
+            PFSA Level 1 + ProSoccerGlobal Scout Training + Opportunity for
+            internship with IKF as a Scout (INR 6,750/-)
+          </label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="course"
+            value="1"
+          />
+        </div>
+        <div class="form-check">
+          <label class="form-check-label" for="no">
+            PFSA Certified Talent Identification Level 1 Only (INR
+            4,100/-)</label
+          >
+          <input
+            class="form-check-input"
+            type="radio"
+            name="course"
+            value="0"
+            checked
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center col-lg-12 col-md-12 col-sm-12 mt-3">
+    <div class="form-group mb-0">
+      <button class="btn login-btn" onclick="next(this)" type="submit">
+        Proceed To Payment
+      </button>
+    </div>
+  </div>
+</form>
